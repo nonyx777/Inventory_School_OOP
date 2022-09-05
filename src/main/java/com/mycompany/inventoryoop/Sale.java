@@ -10,9 +10,9 @@ package com.mycompany.inventoryoop;
  */
 public class Sale extends Transaction{
     public Sale(){
-        
+        this.setType(TransactionType.OUT);
     }
-    public Sale(String date, String product, int quantity, Transaction.TransactionType type){
-        super(date, product, quantity, type);
+    public Sale(String date, String product, int quantity){
+        super(date, product, quantity);
     }
 }

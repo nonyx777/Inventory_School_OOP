@@ -21,11 +21,10 @@ public class Transaction {
     public Transaction(){
         
     }
-    public Transaction(String date, String product, int quantity, TransactionType type){
+    public Transaction(String date, String product, int quantity){
         this.date = date;
         this.product = product;
         this.quantity = quantity;
-        this.type = type;
     }
     
     //accessors and mutators

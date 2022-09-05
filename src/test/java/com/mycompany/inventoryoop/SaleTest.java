@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  * @author nonyx
  */
-public class SaleTest extends Transaction{
+public class SaleTest{
     @Test
     void saleValidity(){
         //expectation array list
@@ -25,11 +25,11 @@ public class SaleTest extends Transaction{
         //reality array list
         ArrayList<Object> reality = new ArrayList<>();
         //instantiating
-        Sale sale = new Sale("monday", "laptop", 3, Transaction.TransactionType.OUT);
+        Sale sale = new Sale("monday", "laptop", 3);
         //added into expectation array list
-        var saleDate = sale.getDate();
-        var saleProduct = sale.getProduct();
-        Transaction.TransactionType saleType = sale.getType();
+        var saleDate = "monday";
+        var saleProduct = "laptop";
+        Transaction.TransactionType saleType = Transaction.TransactionType.OUT;
         //add these into the expectation array list
         expectation.add(saleDate);
         expectation.add(saleProduct);
@@ -39,7 +39,7 @@ public class SaleTest extends Transaction{
         reality.add(sale.getProduct());
         reality.add(sale.getType());
         
-        
+        //iterate through both array lists and test
         for(int i = 0; i < expectation.size() - 1; i++){
             assertEquals(expectation.get(i), reality.get(i));
         }
